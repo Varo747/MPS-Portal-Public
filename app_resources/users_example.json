@@ -1,0 +1,102 @@
+{
+    "User1": {
+        "password": "password1",
+        "id": "MPS-user1",
+        "role": "manager",
+        "mail": "User1@gmail.com",
+        "department": "Front Office",
+        "last_login": "20/05/2025, 12:42:39",
+        "account_creation": "13/05/2025, 09:00:00",
+        "user_image_path": "\\user_images\\default_user_image.png",
+        "reports": {
+            "Production": 0,
+            "Attendance": 0,
+            "Agency": 0,
+            "Total": 0
+        },
+        "notification": [
+            "main_window.qss",
+            0,
+            30,
+            0,
+            0,
+            1
+        ],
+        "reminders": []
+    },
+    "User2": {
+        "password": "password2",
+        "id": "MPS-user2",
+        "role": "manager",
+        "mail": "User2@gmail.com",
+        "department": "Front Office",
+        "last_login": "20/05/2025, 12:42:39",
+        "account_creation": "13/05/2025, 09:00:00",
+        "user_image_path": "\\user_images\\default_user_image.png",
+        "reports": {
+            "Production": 0,
+            "Attendance": 0,
+            "Agency": 0,
+            "Total": 0
+        },
+        "notification": [
+            "main_window.qss",
+            0,
+            30,
+            0,
+            0,
+            1
+        ],
+        "reminders": []
+    },
+    "User3": {
+        "password": "password3",
+        "id": "MPS-user3",
+        "role": "manager",
+        "mail": "User3@gmail.com",
+        "department": "Front Office",
+        "last_login": "20/05/2025, 12:42:39",
+        "account_creation": "13/05/2025, 09:00:00",
+        "user_image_path": "\\user_images\\default_user_image.png",
+        "reports": {
+            "Production": 0,
+            "Attendance": 0,
+            "Agency": 0,
+            "Total": 0
+        },
+        "notification": [
+            "main_window.qss",
+            0,
+            30,
+            0,
+            0,
+            1
+        ],
+        "reminders": []
+    },
+    "User4": {
+        "password": "password4",
+        "id": "MPS-user4",
+        "role": "manager",
+        "mail": "User4@gmail.com",
+        "department": "Front Office",
+        "last_login": "20/05/2025, 12:42:39",
+        "account_creation": "13/05/2025, 09:00:00",
+        "user_image_path": "\\user_images\\default_user_image.png",
+        "reports": {
+            "Production": 0,
+            "Attendance": 0,
+            "Agency": 0,
+            "Total": 0
+        },
+        "notification": [
+            "main_window.qss",
+            0,
+            30,
+            0,
+            0,
+            1
+        ],
+        "reminders": []
+    }
+}

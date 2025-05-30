@@ -1,0 +1,304 @@
+/* =============================== */
+/*   AMAZON-STYLE INDUSTRIAL QSS   */
+/* =============================== */
+
+/* --- MAIN APP BACKGROUND --- */
+QMainWindow, QWidget {
+    background: #F4F6F8; /* Amazon's main dashboard bg */
+    color: #232F3E;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 15px;
+}
+
+/* --- TOP BANNER --- */
+#TopBanner {
+    background: #232F3E; /* AWS dark navy */
+    border-bottom: 1.5px solid #D5DBDB;
+    padding: 15px 32px;
+}
+
+/* --- TOP BANNER TITLE --- */
+#TitleLabel, QLabel#TitleLabel {
+    color: #FF9900; /* Amazon orange accent */
+    font-size: 23px;
+    font-weight: 900;
+    background: transparent;
+    letter-spacing: 1.5px;
+    padding: 4px 14px;
+}
+
+/* --- SIDEBAR --- */
+#SideBar {
+    background: #FFFFFF;
+    border-right: 1.5px solid #EAEDED;
+    min-width: 220px;
+    padding: 22px 0;
+}
+
+#SideBar QPushButton {
+    background: transparent;
+    color: #232F3E;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 26px;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 600;
+}
+#SideBar QPushButton:hover {
+    background: #F5F5F5;
+    color: #FF9900;
+}
+#SideBar QPushButton:checked,
+#SideBar QPushButton:pressed {
+    background: #EAF1FB;
+    color: #146EB4; /* Amazon blue */
+}
+
+/* --- SIDEBAR VERSION --- */
+#VersionLabel {
+    font-size: 13px;
+    color: #7B7E85;
+    border-top: 1px solid #EAEDED;
+    padding: 11px 0 0 0;
+}
+
+/* --- CARDS & CONTAINERS --- */
+#FileContainer, #StatusContainer, #ReportsInformation, #SettingsBox, #DashboardContainer, #UserInfoBox {
+    background: #FFFFFF;
+    border: 1.5px solid #E3E6E8;
+    border-radius: 9px;
+    padding: 30px 24px;
+    margin: 20px 0 0 0;
+}
+
+/* --- MAIN SECTION LABELS --- */
+QLabel {
+    color: #232F3E;
+    font-size: 17px;
+    font-weight: 700;
+    background: transparent;
+    padding: 4px;
+}
+
+/* --- LOGIN & MAIN HEADER LABEL --- */
+#LoginStyle {
+    font-size: 22px;
+    font-weight: bold;
+    color: #146EB4;
+    background: transparent;
+}
+
+/* --- GENERIC BUTTONS --- */
+QPushButton {
+    background: #146EB4; /* Amazon blue */
+    color: #FFF;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 22px;
+    font-weight: bold;
+    font-size: 15px;
+}
+QPushButton:hover {
+    background: #0F548C;
+}
+QPushButton:pressed {
+    background: #1B4F72;
+}
+QPushButton:disabled {
+    background: #E5E9ED;
+    color: #A7ACB0;
+}
+
+/* --- ACCOUNT BUTTON IN TOPBAR --- */
+#Accountbutton, QToolButton#Accountbutton {
+    background: #EAF1FB;
+    color: #232F3E;
+    border: 1.5px solid #E3E6E8;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-size: 15px;
+    font-weight: 600;
+}
+#Accountbutton:hover, QToolButton#Accountbutton:hover {
+    background: #FFD580;
+    border-color: #FF9900;
+    color: #232F3E;
+}
+#Accountbutton:pressed, QToolButton#Accountbutton:pressed {
+    background: #FF9900;
+    color: #FFFFFF;
+    border-color: #FF9900;
+}
+QToolButton#Accountbutton::menu-indicator {
+    image: none;
+}
+
+/* --- QLineEdit (INPUTS) --- */
+QLineEdit {
+    background: #FFF;
+    color: #232F3E;
+    border: 1.5px solid #D5DBDB;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+}
+QLineEdit:focus {
+    border: 1.5px solid #146EB4;
+    background: #F6FAFE;
+}
+
+/* --- QComboBox --- */
+QComboBox {
+    background: #FFF;
+    color: #232F3E;
+    border: 1.5px solid #D5DBDB;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 15px;
+}
+QComboBox:hover, QComboBox:focus {
+    border: 1.5px solid #146EB4;
+}
+QComboBox::drop-down {
+    background: #F4F6F8;
+    border-left: 1.5px solid #E3E6E8;
+    width: 28px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+QComboBox QAbstractItemView {
+    background: #FFFFFF;
+    color: #232F3E;
+    border: 1.5px solid #D5DBDB;
+    selection-background-color: #FFD580;
+    selection-color: #232F3E;
+}
+
+/* --- QTextEdit --- */
+QTextEdit {
+    background: #FFFFFF;
+    color: #232F3E;
+    border: 1.5px solid #E3E6E8;
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 12px;
+}
+#FeedbackBox {
+    min-width: 350px;
+    min-height: 200px;
+}
+
+/* --- QCheckBox --- */
+QCheckBox {
+    font-size: 15px;
+    color: #232F3E;
+    font-weight: 500;
+    background: transparent;
+    padding: 5px;
+}
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #146EB4;
+    border-radius: 5px;
+    background: #FFF;
+}
+QCheckBox::indicator:checked {
+    background: #FF9900;
+    border: 1.5px solid #FF9900;
+}
+QCheckBox::indicator:unchecked {
+    background: #FFF;
+}
+
+/* --- QTableWidget --- */
+QTableWidget {
+    background: #FFF;
+    color: #232F3E;
+    alternate-background-color: #F9FBFC;
+    selection-background-color: #FFD580;
+    selection-color: #232F3E;
+    border: 1.5px solid #E3E6E8;
+    font-size: 15px;
+}
+QTableWidget::item:hover {
+    background: #EAF1FB;
+}
+
+/* --- QHeaderView (Table Header) --- */
+QHeaderView::section {
+    background: #F2F3F4;
+    color: #232F3E;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1.5px solid #E3E6E8;
+    padding: 10px 8px;
+}
+
+/* --- Scrollbar --- */
+QScrollBar:vertical {
+    background: #F4F6F8;
+    width: 11px;
+    border-radius: 6px;
+}
+QScrollBar::handle:vertical {
+    background: #E3E6E8;
+    min-height: 28px;
+    border-radius: 6px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #FFD580;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* --- QDialog --- */
+QDialog {
+    background: #FFFFFF;
+    border-radius: 11px;
+}
+
+/* --- QFrame --- */
+#DashLine {
+    background: #E3E6E8;
+    min-height: 1px;
+    max-height: 1px;
+    border: none;
+    margin: 0px;
+}
+
+/* --- QMenu --- */
+QMenu {
+    background: #FFFFFF;
+    border: 1.5px solid #E3E6E8;
+    padding: 9px;
+    border-radius: 9px;
+    font-size: 15px;
+    color: #232F3E;
+}
+QMenu::item {
+    padding: 10px 28px;
+    border-radius: 7px;
+}
+QMenu::item:selected {
+    background: #FFD580;
+    color: #232F3E;
+}
+
+/* --- QSpinBox, QDateEdit, QTimeEdit --- */
+QSpinBox, QDateEdit, QTimeEdit {
+    background: #FFF;
+    color: #232F3E;
+    border: 1.5px solid #D5DBDB;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 15px;
+}
+QSpinBox:focus, QDateEdit:focus, QTimeEdit:focus {
+    border: 1.5px solid #146EB4;
+}

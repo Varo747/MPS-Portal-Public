@@ -1,0 +1,193 @@
+/* Banner Styles */
+#TopBanner {
+    background-color: #1e1e1e;
+    border-bottom: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+QLabel#TitleLabel {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+QLabel#AccountLabel {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+QWidget#SideBar {
+    background-color: #2c2f33;
+    border-right: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+QPushButton {
+    background-color: #7289da;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #5b6eae;
+}
+
+/* Content Label */
+QLabel#ContentLabel {
+    font-size: 18px;
+    color: #555;
+}
+
+QScrollArea {
+    border: 2px solid #999;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+QScrollBar:vertical {
+    background: #ddd;
+    width: 12px;
+    margin: 2px 0 2px 0;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background: #7289da;
+    min-height: 20px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #5b6eae;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QWidget#FileContainer {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+QTableWidget {
+    background-color: #f0f0f0;
+    alternate-background-color: #e0e0e0;
+    selection-background-color: #a8dadc;
+    selection-color: black;
+}
+QTableWidget::item:hover {
+    background-color: #b0c4de;
+}
+
+QDateEdit {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: 4px;
+}
+QCalendarWidget QToolButton {
+    color: black;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+QLabel#ReportLabel {
+    margin-left: 300px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 4px;
+}
+
+QWidget#ReportsInformation {
+    margin: 0px 150px 0px 150px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+QTextEdit#FeedbackBox {
+    min-width: 400px;
+    min-height: 600px;
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #7289da;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+QWidget#SettingsBox {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+QLabel#SettingsLabels {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 4px;
+}
+
+QCheckBox#SettingsBox {
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 4px;
+}
+QCheckBox#SettingsBox::indicator {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px; /* optional, to space from label */
+}
+
+QCheckBox#SettingsBox {
+    color: white;
+    font-weight: bold;
+    padding: 4px;
+}
+
+QWidget#SettingsContainer {
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 4px;
+}
+
+QWidget#DashboardContainer {
+    background-color: #ffffff;
+    border: 1px solid #dcdfe6;
+    border-radius: 12px;
+    padding: 20px;
+    color: #333333;
+}
+
+QCalendarWidget#DashboardCalendar {
+    background-color: #ffffff;
+    border: 1px solid #dcdfe6;
+    border-radius: 10px;
+}
+
+QTextEdit {
+    background-color: #f9f9fb;
+    border: 1px solid #dcdfe6;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+}
