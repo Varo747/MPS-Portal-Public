@@ -65,5 +65,5 @@ With this app, users can:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Varo747/MPS-public.git
+   git clone https://github.com/Varo747/MPS-Portal-Public.git
    cd MPS-public
