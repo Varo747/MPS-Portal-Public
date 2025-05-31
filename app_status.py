@@ -265,8 +265,7 @@ class App_status():
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_entry = [timestamp, account.username, account.id, action, details, _pass, security_level]
 
-        documents_path = os.path.join(os.path.expanduser("~"), "Documents")
-        temp_csv = os.path.join(documents_path, "log_info_temp.csv")
+        temp_csv = os.path.join("app_resources", "log_info_temp.csv")
         enc_path = LOG_FILE
 
         # Read and decrypt existing logs (if any)
