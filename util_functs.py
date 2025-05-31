@@ -25,8 +25,10 @@ def run_report(path, account, security, status_layout: QVBoxLayout, app, preview
     def handle_status_update(message):
         if message.startswith("[PREVIEW_UPDATE]"):
             report_path = message.replace("[PREVIEW_UPDATE]", "").strip()
-            if preview_callback:
+            if preview_callback and os.path.exists(report_path):
                 QTimer.singleShot(0, lambda: preview_callback(report_path))
+            else:
+                emitter.status_signal.emit("⚠️ Report not found after generation.")
         else:
             status_label = QLabel(message)
             status_layout.addWidget(status_label)
@@ -34,37 +36,51 @@ def run_report(path, account, security, status_layout: QVBoxLayout, app, preview
     emitter.status_signal.connect(handle_status_update)
 
     def target(path):
+        abs_path = os.path.abspath(path)
+        script_dir = os.path.dirname(abs_path)
+
+        emitter.status_signal.emit(f"Running script: {abs_path}")
+
         process = subprocess.Popen(
-            ["python", path],
+            ["python", abs_path],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
-            text=True
+            text=True,
+            cwd=script_dir
         )
 
         report_path = None
 
         for line in process.stdout:
+            line = line.strip()
+            print("[SUBPROCESS]", line)  # ← imprime en consola para depurar
             if "[STATUS]" in line:
-                status = line.strip().replace("[STATUS]", "").strip()
+                status = line.replace("[STATUS]", "").strip()
                 emitter.status_signal.emit(f"Status: {status}")
             elif "[REPORT_PATH]" in line:
-                report_path = line.strip().replace("[REPORT_PATH]", "").strip()
+                report_path = line.replace("[REPORT_PATH]", "").strip()
                 emitter.status_signal.emit(f"[PREVIEW_UPDATE]{report_path}")
 
         process.stdout.close()
         process.wait()
 
-        if report_path and preview_callback:
+        if report_path and os.path.exists(report_path) and preview_callback:
             QTimer.singleShot(0, lambda: preview_callback(report_path))
+        elif report_path:
+            emitter.status_signal.emit("⚠️ Report path detected but file does not exist.")
+        else:
+            emitter.status_signal.emit("❌ Report failed or did not return path.")
 
-    to_log="Unknown type"
+    to_log = "Unknown type"
     if security_check(account.security_level, security):
         emitter.status_signal.emit("Status: Security check passed")
         thread = threading.Thread(target=target, args=(path,))
         thread.start()
-        if "attendance" in path: to_log="Attendance"
-        elif "clock" in path: to_log="Production"
-        elif "agency" in path: to_log="Agency"
+
+        if "attendance" in path: to_log = "Attendance"
+        elif "clock" in path: to_log = "Production"
+        elif "agency" in path: to_log = "Agency"
+
         app.update_report_count(account, to_log)
     else:
         emitter.status_signal.emit("Status: Action canceled due to security rights")

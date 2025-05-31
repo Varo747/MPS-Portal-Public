@@ -1,20 +1,34 @@
 from openpyxl import Workbook
 import os
+import traceback
+import ctypes.wintypes
 
-print("[STATUS] Generating dummy report", flush=True)
+def get_desktop_path():
+    CSIDL_DESKTOPDIRECTORY = 0x10
+    SHGFP_TYPE_CURRENT = 0
+    buf = ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)
+    ctypes.windll.shell32.SHGetFolderPathW(None, CSIDL_DESKTOPDIRECTORY, None, SHGFP_TYPE_CURRENT, buf)
+    return buf.value
 
-desktop = os.path.join(os.path.expanduser("~"), "Desktop")
-output_path = os.path.join(desktop, "dummy_report.xlsx")
+try:
+    print("[STATUS] Generating dummy report", flush=True)
 
-wb = Workbook()
-ws = wb.active
-ws.title = "Report"
+    desktop = get_desktop_path()
+    output_path = os.path.join(desktop, "dummy_report.xlsx")
 
-ws["A1"] = "This is a dummy report"
-ws["A2"] = "For test purposes only :)"
-ws["B1"] = 12345
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Report"
 
-wb.save(output_path)
+    ws["A1"] = "This is a dummy report"
+    ws["A2"] = "For test purposes only :)"
+    ws["B1"] = 12345
 
-print("[STATUS] Completed", flush=True)
-print(f"[REPORT_PATH]{output_path}", flush=True)
+    wb.save(output_path)
+
+    print("[STATUS] Completed", flush=True)
+    print(f"[REPORT_PATH]{output_path}", flush=True)
+
+except Exception as e:
+    print("[STATUS] ❌ Report generation failed", flush=True)
+    print(traceback.format_exc(), flush=True)
