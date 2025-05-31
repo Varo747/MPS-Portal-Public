@@ -4,11 +4,12 @@
 
 ---
 
-## Disclaimer: Demo Data
+## Disclaimer: Demo Mode & Confidentiality
 
 > **Note:**  
-> This project is designed for demonstration purposes only.  
-> The example data and generated files **do NOT contain any real confidential information**.
+> This project is running in a **restricted demonstration mode**.  
+> Some functions (such as full report generation or access to sensitive analytics) have been **intentionally limited or disabled** to preserve confidentiality and data protection.  
+> The example data and generated files **do NOT contain any real confidential information**, and do not reflect actual operations or results from Marine Products Scotland.
 
 ---
 
