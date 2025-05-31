@@ -1,6 +1,6 @@
 from PyQt6.QtGui import QFont, QTextCharFormat, QColor
 from PyQt6.QtWidgets import QWidget, QListWidget, QDialog, QVBoxLayout, QHBoxLayout, QLabel, QTextEdit, QPushButton, QCalendarWidget, QSizePolicy, QTimeEdit, QMenu, QListWidgetItem
-from PyQt6.QtCore import QTime, Qt, QDate
+from PyQt6.QtCore import QTime, Qt, QDate, QLocale
 
 # Class for the reminders window
 class ReminderDialog(QDialog):
@@ -159,6 +159,7 @@ class Dashboard_page(QWidget):
         calendar_layout=QVBoxLayout(calendar_container)
         self.calendar_widget=QCalendarWidget()
         self.calendar_widget.setGridVisible(True)
+        self.calendar_widget.setLocale(QLocale(QLocale.Language.English, QLocale.Country.UnitedStates))
         calendar_layout.addWidget(self.calendar_widget, stretch=1)
         self.calendar_widget.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         calendar_layout.addWidget(self.calendar_widget)

@@ -242,12 +242,11 @@ class App_status():
     def update_json_info(self, account, key, change):
         """
         Update a user's value in the user JSON, then re-encrypt the file.
-        Uses a temp file in Documents for safe editing.
+        Uses a temp file in app_resources for safe editing.
         """
         self.user_info[account.username][key] = change
 
-        documents_path = os.path.join(os.path.expanduser("~"), "Documents")
-        temp_path = os.path.join(documents_path, "user_info_temp.json")
+        temp_path = os.path.join("app_resources", "user_info_temp.json")
         with open(temp_path, "w", encoding="utf-8") as f:
             json.dump(self.user_info, f, indent=4)
 

@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import (
     QWidget, QPushButton, QVBoxLayout, QHBoxLayout,
     QLabel, QMessageBox, QScrollArea, QTableWidget, QTableWidgetItem,
     QComboBox, QDateEdit, QLineEdit, QSizePolicy)
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QLocale
 
 # Create Utilities window
 class Utilities_page(QWidget):
@@ -36,6 +36,7 @@ class Utilities_page(QWidget):
         self.date_filter = QDateEdit()
         self.date_filter.setCalendarPopup(True)
         self.date_filter.setDisplayFormat("yyyy-MM-dd")
+        self.date_filter.setLocale(QLocale(QLocale.Language.English, QLocale.Country.UnitedStates))
 
         # === Action ===
         self.action_filter = QComboBox()
